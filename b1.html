@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Battery(energy) {
+        this.energy = energy;
+        this.getEnergy = function () {
+            return this.energy = energy
+        }
+        this.setEnergy = function (energy) {
+            this.energy = energy;
+        }
+        this.decreaseEnergy = function () {
+            if (this.energy > 0)
+                this.energy --;
+        }
+    }
+    function Flashlamp() {
+        this.setBattery = function (battery) {
+            this.battery = battery
+        }
+        this.getBattery = function () {
+            return this.battery.getEnergy();
+        }
+        this.light= function () {
+            if (battery.energy > 0){
+                console.log(battery.energy --);
+                alert("lightning")
+            }
+            else {
+                alert("notLightning")
+            }
+        }
+        this.turnOn = function () {
+            console.log(battery.energy --);
+            alert("lightning")
+        }
+        this.turnOff = function () {
+            console.log(battery.energy);
+            alert("notLightning")
+        }
+    }
+    let battery = new Battery();
+    battery.setEnergy(10);
+    let flashLamp = new Flashlamp();
+    flashLamp.setBattery(battery);
+</script>
+</body>
+</html>
